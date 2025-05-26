@@ -1,42 +1,42 @@
-# GitHub Workflows para Vibra Wiki
+# GitHub Workflows for Vibra Wiki
 
-## Despliegue a GitHub Pages
+## Deployment to GitHub Pages
 
-Este repositorio utiliza GitHub Actions para automatizar el despliegue del sitio Docusaurus a GitHub Pages.
+This repository uses GitHub Actions to automate the deployment of the Docusaurus site to GitHub Pages.
 
-### Flujo de trabajo de despliegue
+### Deployment Workflow
 
-El archivo `.github/workflows/deploy.yml` define un flujo de trabajo que se activa automáticamente cuando se realiza un push a la rama `main`. Este flujo de trabajo:
+The `.github/workflows/deploy.yml` file defines a workflow that is automatically triggered when a push is made to the `main` branch. This workflow:
 
-1. Configura un entorno Node.js
-2. Instala las dependencias del proyecto
-3. Construye el sitio Docusaurus
-4. Despliega los archivos generados a la rama `gh-pages`
+1. Sets up a Node.js environment
+2. Installs project dependencies
+3. Builds the Docusaurus site
+4. Deploys the generated files to the `gh-pages` branch
 
-### Configuración necesaria en GitHub
+### Required Configuration in GitHub
 
-Para que el despliegue funcione correctamente, debes configurar lo siguiente en tu repositorio de GitHub:
+To ensure the deployment works correctly, you must configure the following in your GitHub repository:
 
-1. Ve a la configuración del repositorio: `Settings > Actions > General`
-2. En la sección "Workflow permissions", selecciona "Read and write permissions" y guarda los cambios
-3. Ve a la configuración de Pages: `Settings > Pages`
-4. En "Source", selecciona "Deploy from a branch"
-5. En "Branch", selecciona `gh-pages` y la carpeta raíz (`/`), luego guarda los cambios
+1. Go to the repository settings: `Settings > Actions > General`
+2. In the "Workflow permissions" section, select "Read and write permissions" and save the changes
+3. Go to the Pages settings: `Settings > Pages`
+4. In "Source", select "Deploy from a branch"
+5. In "Branch", select `gh-pages` and the root folder (`/`), then save the changes
 
-### Despliegue manual
+### Manual Deployment
 
-Si prefieres realizar un despliegue manual, puedes usar el siguiente comando:
+If you prefer to perform a manual deployment, you can use the following command:
 
 ```bash
-GIT_USER=<tu-usuario-github> USE_SSH=true npm run deploy
+GIT_USER=<your-github-username> USE_SSH=true npm run deploy
 ```
 
-Reemplaza `<tu-usuario-github>` con tu nombre de usuario de GitHub.
+Replace `<your-github-username>` with your GitHub username.
 
-### Solución de problemas
+### Troubleshooting
 
-Si encuentras problemas con el despliegue:
+If you encounter issues with the deployment:
 
-1. Verifica los logs de GitHub Actions en la pestaña "Actions" del repositorio
-2. Asegúrate de que las configuraciones en `docusaurus.config.ts` sean correctas (url, baseUrl, organizationName, projectName)
-3. Confirma que los permisos de GitHub Actions estén configurados correctamente
+1. Check the GitHub Actions logs in the "Actions" tab of the repository
+2. Ensure that the configurations in `docusaurus.config.ts` are correct (url, baseUrl, organizationName, projectName)
+3. Confirm that GitHub Actions permissions are configured correctly
