@@ -31,6 +31,12 @@ If you prefer to perform a manual deployment, you can use the following command:
 GIT_USER=<your-github-username> USE_SSH=true npm run deploy
 ```
 
+```bash
+$env:GIT_USER="<your-github-username>"
+$env:GIT_PASS="<your-github-token>"
+npm run deploy
+```
+
 Replace `<your-github-username>` with your GitHub username.
 
 ### Troubleshooting
