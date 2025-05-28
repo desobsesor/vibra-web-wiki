@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkvibra_web_wiki=self.webpackChunkvibra_web_wiki||[]).push([[903],{1912:i=>{i.exports=JSON.parse('{"blogBasePath":"/vibra-web-wiki/blog","blogTitle":"Blog","authorsListPath":"/vibra-web-wiki/blog/authors"}')}}]);
