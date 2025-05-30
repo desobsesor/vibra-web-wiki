@@ -47,3 +47,23 @@ architecture:
   label: Architecture
   permalink: /architecture
   description: Software architecture patterns, designs, and best practices
+
+migration:
+  label: Migration
+  permalink: /migration
+  description: Database migration techniques and tools
+
+data:
+  label: Data
+  permalink: /data
+  description: Data analysis, visualization, and manipulation techniques
+
+cloud:
+  label: Cloud
+  permalink: /cloud
+  description: Cloud computing, services, and technologies
+
+aws:
+  label: AWS
+  permalink: /aws
+  description: Amazon Web Services (AWS) cloud computing platform
