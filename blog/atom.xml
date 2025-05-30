@@ -2,11 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://desobsesor.github.io/blog</id>
     <title>Vibra Wiki Blog</title>
-    <updated>2025-05-24T00:00:00.000Z</updated>
+    <updated>2025-05-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://desobsesor.github.io/blog"/>
     <subtitle>Vibra Wiki Blog</subtitle>
     <icon>https://desobsesor.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[MongoDB in Cluster Cloud with Migration Process]]></title>
+        <id>https://desobsesor.github.io/blog/mongodb-in-cluster-cloud-with-migration-process</id>
+        <link href="https://desobsesor.github.io/blog/mongodb-in-cluster-cloud-with-migration-process"/>
+        <updated>2025-05-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[One of the most repetitive processes is migrating relational and non-relational databases from our on-premises environment to a cloud environment.]]></summary>
+        <content type="html"><![CDATA[<p>🚀 <strong>Step-by-Step Guide: Migrating MongoDB from Local to Atlas</strong></p>
+<p>One of the most repetitive processes is migrating relational and non-relational databases from our on-premises environment to a cloud environment. This short post explains how to configure Atlas, create a backup, and restore a database in a basic migration process.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1️⃣-prepare-mongodb-atlas">1️⃣ Prepare MongoDB Atlas<a href="https://desobsesor.github.io/blog/mongodb-in-cluster-cloud-with-migration-process#1%EF%B8%8F%E2%83%A3-prepare-mongodb-atlas" class="hash-link" aria-label="Direct link to 1️⃣ Prepare MongoDB Atlas" title="Direct link to 1️⃣ Prepare MongoDB Atlas">​</a></h3>
+<ul>
+<li><strong>Create a Cluster</strong>: If you haven't already, head over to MongoDB Atlas and set up a free cluster (M0). Follow this <a href="https://desobsesor.github.io/blog/mongodb-in-cluster-cloud-with-migration-process#">guide</a> for detailed instructions.</li>
+<li><strong>User Configuration</strong>: Set up a user with read/write permissions (e.g., migrator).</li>
+<li><strong>Network Access</strong>: Add your current IP (or use 0.0.0.0/0 temporarily) in Network Access.</li>
+</ul>
+<p><strong>Get the Atlas Connection String</strong>:</p>
+<ul>
+<li>Navigate to your cluster in <a href="https://cloud.mongodb.com/" target="_blank" rel="noopener noreferrer">https://cloud.mongodb.com/</a> and click "Connect".</li>
+<li>Choose "Connect your application".</li>
+<li>Copy the Connection String (e.g., <code>mongodb+srv://user:password@clusterxxx.mongodb.net/</code>).</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2️⃣-export-local-data-with-mongodump">2️⃣ Export Local Data with <code>mongodump</code><a href="https://desobsesor.github.io/blog/mongodb-in-cluster-cloud-with-migration-process#2%EF%B8%8F%E2%83%A3-export-local-data-with-mongodump" class="hash-link" aria-label="Direct link to 2️⃣-export-local-data-with-mongodump" title="Direct link to 2️⃣-export-local-data-with-mongodump">​</a></h3>
+<ul>
+<li><strong>Backup Data Locally</strong>:
+run the following command:</li>
+</ul>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">  mongodump --host localhost --port 27017 --db vibra-db --out C://Users/USER/Personal/mongodb_backups_vibra_2025</span><br></span></code></pre></div></div>
+<ul>
+<li><strong>Restore Data to Cloud</strong>:
+run the following command:</li>
+</ul>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">  mongorestore --uri="mongodb+srv://username:Password@cluster0xxx.xxxx.mongodb.net/" C://Users/USER/Personal/mongodb_backups_vibra_2025/</span><br></span></code></pre></div></div>
+<p><strong>Vibra</strong> is an academic app for students who want to validate and share their thoughts and experiences with other students.</p>]]></content>
+        <author>
+            <name>Yovany Suarez Silva</name>
+            <uri>https://desobsesor.github.io/portfolio-web/</uri>
+        </author>
+        <category label="Vibra app" term="Vibra app"/>
+        <category label="MongoDB" term="MongoDB"/>
+        <category label="Cloud" term="Cloud"/>
+        <category label="Migration" term="Migration"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Inside Vibra's MongoDB Architecture]]></title>
         <id>https://desobsesor.github.io/blog/activities-vibra-post</id>
